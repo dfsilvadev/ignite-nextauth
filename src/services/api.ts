@@ -53,7 +53,7 @@ api.interceptors.response.use(
             })
             .catch((err) => {
               failedRequestQueue.forEach((request) => {
-                request.onSuccess(err);
+                request.onFailure(err);
               });
               failedRequestQueue = [];
             })
